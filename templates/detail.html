@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-8">
+
+        <!-- Article -->
+        <article>
+            <header class="mb-4">
+                <h3 class="fw-bolder mb-1">{{ article.title }}</h3>
+                <div class="text-muted fst-italic mb-2">{{ article.created_date }}</div>
+                <p class="lead">{{ article.author.username }} tarafından yayınlandı</p>
+            </header>
+
+            {% if article.article_image %}
+                <img class="img-fluid rounded mb-4"
+                     src="{{ article.article_image.url }}"
+                     alt="{{ article.title }}">
+            {% endif %}
+
+            <section class="mb-5">
+                <p class="lead">{{ article.content|safe }}</p>
+            </section>
+        </article>
+        
+
+
+        <!-- Comments Section -->
+        <section class="mb-5">
+            <div class="card bg-light">
+                <h5 class="card-header">Yorumlar</h5>
+                <div class="card-body">
+
+                    <!-- Comment List (ÜSTTE) -->
+                    {% if comments %}
+                        {% for comment in comments %}
+                            <div class="d-flex mb-4">
+                                <div class="flex-shrink-0">
+                                    <img class="rounded-circle"
+                                         src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
+                                         alt="">
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">{{ comment.comment_author }}</div>
+                                    {{comment.comment_date}} <br>
+                                    {{ comment.comment_content }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="alert alert-danger mb-4">
+                            Bu makaleye herhangi bir yorum yazılmamış
+                        </div>
+                    {% endif %}
+
+                    <hr>
+
+                    <!-- Comment Form (ALTTA) -->
+                    <h5>Yorum Ekle</h5>
+                    <form method="post" action="{% url 'article:comment' article.id %}">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">İsim</label>
+                            <input type="text"
+                                   name="comment_author"
+                                   class="form-control"
+                                   placeholder="İsminizi girin">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Yorum</label>
+                            <textarea name="comment_content"
+                                      class="form-control"
+                                      rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">Ekle</button>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+{% endblock body %}
