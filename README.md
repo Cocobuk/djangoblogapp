@@ -23,10 +23,10 @@ Uygulama, başarılı kayıt sonrası anlık geri bildirim verir.
 <img width="2558" height="1206" alt="Ekran Resmi 2026-04-09 17 35 19" src="https://github.com/user-attachments/assets/120f475c-ca49-4ab0-bdf6-025710cdc446" />
 
 [Makaleler] 
-<img width="2549" height="991" alt="Ekran Resmi 2026-04-09 17 35 50" src="https://github.com/user-attachments/assets/31110621-9d5d-4de6-9df4-b4e989363d9b" />### Makale Listesi ve Arama
+<img width="2549" height="991" alt="Ekran Resmi 2026-04-09 17 35 50" src="https://github.com/user-attachments/assets/31110621-9d5d-4de6-9df4-b4e989363d9b" /> Makale Listesi ve Arama
 
 [Makale Detay]
-<img width="2546" height="1192" alt="Ekran Resmi 2026-04-09 17 36 23" src="https://github.com/user-attachments/assets/cde8c61f-c99d-46e9-9417-588d20e7dfc0" />###Makale Detay ve Yorumlar
+<img width="2546" height="1192" alt="Ekran Resmi 2026-04-09 17 36 23" src="https://github.com/user-attachments/assets/cde8c61f-c99d-46e9-9417-588d20e7dfc0" /> Makale Detay ve Yorumlar
 
 * **Backend:** Python, Django
 * **Veritabanı:** SQLite3
